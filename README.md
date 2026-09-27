@@ -10,10 +10,9 @@ Copyright (c) 2026 Kakon Chakma. MIT License (see [LICENSE](LICENSE)); bundled l
 
 ## Use it
 
-There are three ways, all free and without installation:
+Without installation:
 
-1. **Online:** open **https://kakonck.github.io/gridrich/** in any recent browser. Nothing is uploaded; the page runs entirely on your computer.
-2. **Release package:** download `Gridrich_1.0.0.zip` from the [Releases page](https://github.com/kakonck/gridrich/releases) (also in [`releases/`](releases/)). It holds Gridrich.html, the README, licences and the example dataset (Bangladesh birds).
+1. **Release package:** download `Gridrich_1.0.0.zip` from the [Releases page](https://github.com/kakonck/gridrich/releases) (also in [`releases/`](releases/)). It holds Gridrich.html, the README, licences and the example dataset (Bangladesh birds).
 
 Then press **Load example data** and **Build grids and count** to see how it works, or drop your own boundary (GeoJSON, KML, zipped shapefile) and record table (CSV, TSV, Excel or a GBIF download zip), set cell sizes, and run.
 
