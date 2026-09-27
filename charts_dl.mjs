@@ -1,0 +1,17 @@
+import { chromium } from 'playwright'; import fs from 'fs';
+const browser = await chromium.launch({ executablePath: process.env.CHROME || '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell' });
+const page = await browser.newPage({ viewport: { width: 1400, height: 1000 } }); const errs = []; page.on('pageerror', e => errs.push(e.message));
+await page.goto('file://' + process.cwd() + '/Gridrich.html'); await page.waitForTimeout(400);
+await page.setInputFiles('#boundaryInput', ['test/demo_regions.geojson']); await page.waitForTimeout(600);
+await page.setInputFiles('#recordsInput', ['test/demo_occurrences.csv']); await page.waitForTimeout(800);
+await page.fill('#cellSizes', '10, 25, 50'); await page.click('#runBtn');
+await page.waitForFunction(() => /Done|Error/.test(document.getElementById('log').textContent), null, { timeout: 300000 });
+await page.click('.tabs button[data-tab=charts]'); await page.waitForTimeout(500);
+console.log('cards', await page.$$eval('#charts .chart', c => c.length));
+let dl = page.waitForEvent('download'); await page.click('#charts .chart:nth-child(1) .dlChartPng'); let d = await dl; await d.saveAs('test/chart1.png'); console.log(d.suggestedFilename(), fs.statSync('test/chart1.png').size);
+dl = page.waitForEvent('download'); await page.click('#charts .chart:nth-child(5) .dlChartSvg'); d = await dl; await d.saveAs('test/chart5.svg'); console.log(d.suggestedFilename(), fs.statSync('test/chart5.svg').size);
+dl = page.waitForEvent('download', { timeout: 120000 }); await page.click('#dlChartsPng'); d = await dl; await d.saveAs('test/charts_png.zip'); console.log(d.suggestedFilename(), fs.statSync('test/charts_png.zip').size);
+dl = page.waitForEvent('download'); await page.click('#dlChartsSvg'); d = await dl; await d.saveAs('test/charts_svg.zip'); console.log(d.suggestedFilename(), fs.statSync('test/charts_svg.zip').size);
+await page.screenshot({ path: 'test/charts_tab.png', fullPage: true });
+console.log('errors', errs);
+await browser.close();

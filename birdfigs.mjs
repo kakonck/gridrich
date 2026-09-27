@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch({ executablePath: process.env.CHROME || '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell' });
+const page = await browser.newPage({ viewport: { width: 1400, height: 1000 }, deviceScaleFactor: 2 });
+await page.goto('file://' + process.cwd() + '/Gridrich.html'); await page.waitForTimeout(400);
+await page.click('#exampleBtn'); await page.waitForFunction(() => /Example loaded/.test(document.getElementById('log').textContent), null, { timeout: 120000 });
+const shot = async (path) => { await page.$eval('#mapwrap', e => e.scrollIntoView()); const m = await page.$eval('#mapwrap svg', e => { const r = e.getBoundingClientRect(); return { x: r.left + window.scrollX, y: r.top + window.scrollY, w: r.width, h: r.height }; }); await page.screenshot({ path, fullPage: true, clip: { x: m.x, y: m.y, width: m.w, height: m.h } }); };
+await page.check('#showRecords'); await page.selectOption('#basemap', 'both').catch(() => {}); await page.waitForTimeout(1500);
+await shot('/home/claude/paper/fig/fig2_records_overlay.png');
+await page.click('#runBtn'); await page.waitForFunction(() => /Done|Error/.test(document.getElementById('log').textContent), null, { timeout: 600000 });
+await page.uncheck('#showRecords'); await page.selectOption('#mapGrid', '0'); await page.selectOption('#mapVar', 'richness'); await page.selectOption('#mapClass', 'continuous'); await page.selectOption('#mapPalette', 'viridis'); await page.waitForTimeout(800);
+await shot('/home/claude/paper/fig/fig3_richness_map.png');
+await browser.close();

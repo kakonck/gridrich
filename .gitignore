@@ -1,0 +1,8 @@
+node_modules/
+dist/
+app.html
+test/*.png
+test/*.xlsx
+test/*.out
+test/charts_*.zip
+.DS_Store
