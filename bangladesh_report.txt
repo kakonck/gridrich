@@ -1,0 +1,172 @@
+Gridrich 1.0.0 validation report
+========================================
+Date: 2026-09-27T17:06:29.226Z
+Boundary: bgd_example_divisions.geojson
+Records: bgd_example_records.csv
+Cell sizes: 10,25,50 km; minimum share 0; rarefaction 50; regions: division
+Reference: validate.R (R/sf), validation/bangladesh
+Tolerances: integers exact; areas and densities relative 0.00001 (or 100 m2 absolute for slivers); coordinates 0.01 m; rarefaction 1e-7; similarity 1e-9
+
+[square]
+  PASS  run completed                                                          9.9 s
+  PASS  data quality counts                                                    submitted 130778; missing_coordinates 0; out_of_range 0; missing_species 0; coordinate_duplicates 0; outside_boundary 4553; inside_boundary 126225; species 670
+[square 10km]
+  PASS  number of cells                                                        1652 vs 1652
+  PASS  cell_id                                                                1652 values, max difference 0.00e+0
+  PASS  cell centre x, y relative to grid origin (m)                           3304 values, max difference 4.37e-10
+  PASS  projection frame offset below 12 m (centre rounding)                   dx -0.002 m, dy 11.067 m
+  PASS  area inside boundary (km2)                                             1652 values, max relative difference 1.51e-4 (max absolute 8.53e-5)
+  PASS  prop_in                                                                1652 values, max relative difference 1.51e-4 (max absolute 8.53e-7)
+  PASS  n_occ                                                                  1652 values, max difference 0.00e+0
+  PASS  richness                                                               1652 values, max difference 0.00e+0
+  PASS  record_density_per_km2                                                 1652 values, max relative difference 9.87e-6 (max absolute 1.05e-3)
+  PASS  pct_species                                                            1652 values, max relative difference 4.68e-15 (max absolute 4.97e-14)
+  PASS  richness_rarefied (unrounded)                                          1652 values, max difference 9.04e-10
+  PASS  species lists                                                          cell by cell string comparison
+  PASS  summary integers                                                       n_cells 1652; n_occupied 927; total_occ 126225; records_in_removed_cells 0; gamma_richness 670; max_richness 316; max_occ 5167; median_richness_occupied 34; median_occ_occupied 41; cells_rarefied 415; cells_excluded_rarefaction 512
+  PASS  summary means (app rounds to 0.01)                                     2 values, max difference 4.95e-3
+  PASS  pct_occupied (app rounds to 0.1)                                       1 values, max difference 1.38e-2
+  PASS  species table (order, n_occ, n_cells)                                  670 species
+  PASS  presence/absence matrix                                                927 x 670
+  PASS  multiple-site beta (gamma, mean alpha, Whittaker, Sorensen, turnover, nestedness) 6 values, max difference 2.84e-14
+[square 25km]
+  PASS  number of cells                                                        303 vs 303
+  PASS  cell_id                                                                303 values, max difference 0.00e+0
+  PASS  cell centre x, y relative to grid origin (m)                           606 values, max difference 4.37e-10
+  PASS  projection frame offset below 12 m (centre rounding)                   dx -0.002 m, dy 11.067 m
+  PASS  area inside boundary (km2)                                             303 values, max relative difference 1.04e-5 (max absolute 1.98e-4)
+  PASS  prop_in                                                                303 values, max relative difference 1.04e-5 (max absolute 3.16e-7)
+  PASS  n_occ                                                                  303 values, max difference 0.00e+0
+  PASS  richness                                                               303 values, max difference 0.00e+0
+  PASS  record_density_per_km2                                                 303 values, max relative difference 5.09e-6 (max absolute 9.06e-6)
+  PASS  pct_species                                                            303 values, max relative difference 4.59e-15 (max absolute 4.97e-14)
+  PASS  richness_rarefied (unrounded)                                          303 values, max difference 5.83e-9
+  PASS  species lists                                                          cell by cell string comparison
+  PASS  summary integers                                                       n_cells 303; n_occupied 276; total_occ 126225; records_in_removed_cells 0; gamma_richness 670; max_richness 356; max_occ 12013; median_richness_occupied 81.5; median_occ_occupied 170.5; cells_rarefied 219; cells_excluded_rarefaction 57
+  PASS  summary means (app rounds to 0.01)                                     2 values, max difference 3.04e-3
+  PASS  pct_occupied (app rounds to 0.1)                                       1 values, max difference 1.09e-2
+  PASS  species table (order, n_occ, n_cells)                                  670 species
+  PASS  presence/absence matrix                                                276 x 670
+  PASS  multiple-site beta (gamma, mean alpha, Whittaker, Sorensen, turnover, nestedness) 6 values, max difference 2.84e-14
+  PASS  pairwise jaccard (276 units)                                           76176 values, max difference 5.55e-16
+  PASS  pairwise sorensen (276 units)                                          76176 values, max difference 5.55e-16
+  PASS  pairwise bsor (276 units)                                              76176 values, max difference 5.55e-16
+  PASS  pairwise bsim (276 units)                                              76176 values, max difference 5.00e-16
+  PASS  pairwise bsne (276 units)                                              76176 values, max difference 5.55e-16
+[square 50km]
+  PASS  number of cells                                                        91 vs 91
+  PASS  cell_id                                                                91 values, max difference 0.00e+0
+  PASS  cell centre x, y relative to grid origin (m)                           182 values, max difference 4.37e-10
+  PASS  projection frame offset below 12 m (centre rounding)                   dx -0.002 m, dy 11.067 m
+  PASS  area inside boundary (km2)                                             91 values, max relative difference 1.95e-6 (max absolute 3.94e-4)
+  PASS  prop_in                                                                91 values, max relative difference 1.95e-6 (max absolute 1.58e-7)
+  PASS  n_occ                                                                  91 values, max difference 0.00e+0
+  PASS  richness                                                               91 values, max difference 0.00e+0
+  PASS  record_density_per_km2                                                 91 values, max relative difference 1.95e-6 (max absolute 2.23e-6)
+  PASS  pct_species                                                            91 values, max relative difference 4.59e-15 (max absolute 4.97e-14)
+  PASS  richness_rarefied (unrounded)                                          91 values, max difference 4.63e-9
+  PASS  species lists                                                          cell by cell string comparison
+  PASS  summary integers                                                       n_cells 91; n_occupied 87; total_occ 126225; records_in_removed_cells 0; gamma_richness 670; max_richness 423; max_occ 14683; median_richness_occupied 160; median_occ_occupied 831; cells_rarefied 79; cells_excluded_rarefaction 8
+  PASS  summary means (app rounds to 0.01)                                     2 values, max difference 2.30e-3
+  PASS  pct_occupied (app rounds to 0.1)                                       1 values, max difference 4.40e-3
+  PASS  species table (order, n_occ, n_cells)                                  670 species
+  PASS  presence/absence matrix                                                87 x 670
+  PASS  multiple-site beta (gamma, mean alpha, Whittaker, Sorensen, turnover, nestedness) 6 values, max difference 2.84e-13
+  PASS  pairwise jaccard (87 units)                                            7569 values, max difference 5.55e-16
+  PASS  pairwise sorensen (87 units)                                           7569 values, max difference 5.55e-16
+  PASS  pairwise bsor (87 units)                                               7569 values, max difference 5.00e-16
+  PASS  pairwise bsim (87 units)                                               7569 values, max difference 5.55e-16
+  PASS  pairwise bsne (87 units)                                               7569 values, max difference 5.00e-16
+[square regions]
+  PASS  records and richness per region                                        Khulna 14913/380; Chittagong 22645/492; Barisal 8531/300; Rajshahi 20942/384; Dhaka 37024/446; Rangpur 3475/279; Sylhet 14743/485; Mymensingh 3952/289
+  PASS  region area                                                            8 values, max relative difference 4.21e-13 (max absolute 1.31e-8)
+  PASS  region rarefied richness                                               8 values, max difference 1.88e-8
+  PASS  multiple-site beta between regions                                     6 values, max difference 4.44e-16
+  PASS  pairwise jaccard between regions                                       64 values, max difference 4.44e-16
+  PASS  pairwise sorensen between regions                                      64 values, max difference 4.44e-16
+  PASS  pairwise bsor between regions                                          64 values, max difference 4.72e-16
+  PASS  pairwise bsim between regions                                          64 values, max difference 4.16e-16
+  PASS  pairwise bsne between regions                                          64 values, max difference 4.72e-16
+[hexagon]
+  PASS  run completed                                                          11.8 s
+  PASS  data quality counts                                                    submitted 130778; missing_coordinates 0; out_of_range 0; missing_species 0; coordinate_duplicates 0; outside_boundary 4553; inside_boundary 126225; species 670
+[hexagon 10km]
+  PASS  number of cells                                                        1905 vs 1905
+  PASS  cell_id                                                                1905 values, max difference 0.00e+0
+  PASS  cell centre x, y relative to grid origin (m)                           3810 values, max difference 8.73e-10
+  PASS  projection frame offset below 12 m (centre rounding)                   dx -0.002 m, dy 11.067 m
+  PASS  area inside boundary (km2)                                             1905 values, max relative difference 2.07e-3 (max absolute 8.21e-5)
+  PASS  prop_in                                                                1905 values, max relative difference 2.07e-3 (max absolute 9.48e-7)
+  PASS  n_occ                                                                  1905 values, max difference 0.00e+0
+  PASS  richness                                                               1905 values, max difference 0.00e+0
+  PASS  record_density_per_km2                                                 1905 values, max relative difference 5.47e-6 (max absolute 7.94e-5)
+  PASS  pct_species                                                            1905 values, max relative difference 4.68e-15 (max absolute 4.97e-14)
+  PASS  richness_rarefied (unrounded)                                          1905 values, max difference 3.07e-9
+  PASS  species lists                                                          cell by cell string comparison
+  PASS  summary integers                                                       n_cells 1905; n_occupied 994; total_occ 126225; records_in_removed_cells 0; gamma_richness 670; max_richness 322; max_occ 8016; median_richness_occupied 30; median_occ_occupied 37; cells_rarefied 416; cells_excluded_rarefaction 578
+  PASS  summary means (app rounds to 0.01)                                     2 values, max difference 3.08e-3
+  PASS  pct_occupied (app rounds to 0.1)                                       1 values, max difference 2.15e-2
+  PASS  species table (order, n_occ, n_cells)                                  670 species
+  PASS  presence/absence matrix                                                994 x 670
+  PASS  multiple-site beta (gamma, mean alpha, Whittaker, Sorensen, turnover, nestedness) 6 values, max difference 3.55e-14
+[hexagon 25km]
+  PASS  number of cells                                                        348 vs 348
+  PASS  cell_id                                                                348 values, max difference 0.00e+0
+  PASS  cell centre x, y relative to grid origin (m)                           696 values, max difference 9.02e-10
+  PASS  projection frame offset below 12 m (centre rounding)                   dx -0.002 m, dy 11.067 m
+  PASS  area inside boundary (km2)                                             348 values, max relative difference 1.23e-5 (max absolute 1.76e-4)
+  PASS  prop_in                                                                348 values, max relative difference 1.23e-5 (max absolute 3.25e-7)
+  PASS  n_occ                                                                  348 values, max difference 0.00e+0
+  PASS  richness                                                               348 values, max difference 0.00e+0
+  PASS  record_density_per_km2                                                 348 values, max relative difference 2.76e-6 (max absolute 1.89e-5)
+  PASS  pct_species                                                            348 values, max relative difference 4.68e-15 (max absolute 4.97e-14)
+  PASS  richness_rarefied (unrounded)                                          348 values, max difference 1.44e-9
+  PASS  species lists                                                          cell by cell string comparison
+  PASS  summary integers                                                       n_cells 348; n_occupied 303; total_occ 126225; records_in_removed_cells 0; gamma_richness 670; max_richness 332; max_occ 11433; median_richness_occupied 72; median_occ_occupied 137; cells_rarefied 226; cells_excluded_rarefaction 77
+  PASS  summary means (app rounds to 0.01)                                     2 values, max difference 4.16e-3
+  PASS  pct_occupied (app rounds to 0.1)                                       1 values, max difference 3.10e-2
+  PASS  species table (order, n_occ, n_cells)                                  670 species
+  PASS  presence/absence matrix                                                303 x 670
+  PASS  multiple-site beta (gamma, mean alpha, Whittaker, Sorensen, turnover, nestedness) 6 values, max difference 1.42e-14
+  PASS  pairwise jaccard (303 units)                                           91809 values, max difference 5.00e-16
+  PASS  pairwise sorensen (303 units)                                          91809 values, max difference 5.55e-16
+  PASS  pairwise bsor (303 units)                                              91809 values, max difference 5.55e-16
+  PASS  pairwise bsim (303 units)                                              91809 values, max difference 5.00e-16
+  PASS  pairwise bsne (303 units)                                              91809 values, max difference 5.55e-16
+[hexagon 50km]
+  PASS  number of cells                                                        103 vs 103
+  PASS  cell_id                                                                103 values, max difference 0.00e+0
+  PASS  cell centre x, y relative to grid origin (m)                           206 values, max difference 8.73e-10
+  PASS  projection frame offset below 12 m (centre rounding)                   dx -0.002 m, dy 11.067 m
+  PASS  area inside boundary (km2)                                             103 values, max relative difference 2.13e-6 (max absolute 3.79e-4)
+  PASS  prop_in                                                                103 values, max relative difference 2.13e-6 (max absolute 1.75e-7)
+  PASS  n_occ                                                                  103 values, max difference 0.00e+0
+  PASS  richness                                                               103 values, max difference 0.00e+0
+  PASS  record_density_per_km2                                                 103 values, max relative difference 1.81e-6 (max absolute 7.61e-6)
+  PASS  pct_species                                                            103 values, max relative difference 3.01e-15 (max absolute 4.97e-14)
+  PASS  richness_rarefied (unrounded)                                          103 values, max difference 3.50e-9
+  PASS  species lists                                                          cell by cell string comparison
+  PASS  summary integers                                                       n_cells 103; n_occupied 96; total_occ 126225; records_in_removed_cells 0; gamma_richness 670; max_richness 431; max_occ 18613; median_richness_occupied 151.5; median_occ_occupied 634.5; cells_rarefied 90; cells_excluded_rarefaction 6
+  PASS  summary means (app rounds to 0.01)                                     2 values, max difference 3.75e-3
+  PASS  pct_occupied (app rounds to 0.1)                                       1 values, max difference 3.88e-3
+  PASS  species table (order, n_occ, n_cells)                                  670 species
+  PASS  presence/absence matrix                                                96 x 670
+  PASS  multiple-site beta (gamma, mean alpha, Whittaker, Sorensen, turnover, nestedness) 6 values, max difference 4.88e-15
+  PASS  pairwise jaccard (96 units)                                            9216 values, max difference 5.55e-16
+  PASS  pairwise sorensen (96 units)                                           9216 values, max difference 5.55e-16
+  PASS  pairwise bsor (96 units)                                               9216 values, max difference 5.55e-16
+  PASS  pairwise bsim (96 units)                                               9216 values, max difference 5.00e-16
+  PASS  pairwise bsne (96 units)                                               9216 values, max difference 5.00e-16
+[hexagon regions]
+  PASS  records and richness per region                                        Khulna 14913/380; Chittagong 22645/492; Barisal 8531/300; Rajshahi 20942/384; Dhaka 37024/446; Rangpur 3475/279; Sylhet 14743/485; Mymensingh 3952/289
+  PASS  region area                                                            8 values, max relative difference 4.21e-13 (max absolute 1.31e-8)
+  PASS  region rarefied richness                                               8 values, max difference 1.88e-8
+  PASS  multiple-site beta between regions                                     6 values, max difference 4.44e-16
+  PASS  pairwise jaccard between regions                                       64 values, max difference 4.44e-16
+  PASS  pairwise sorensen between regions                                      64 values, max difference 4.44e-16
+  PASS  pairwise bsor between regions                                          64 values, max difference 4.72e-16
+  PASS  pairwise bsim between regions                                          64 values, max difference 4.16e-16
+  PASS  pairwise bsne between regions                                          64 values, max difference 4.72e-16
+
+Checks: 150, failed: 0
+RESULT: PASS

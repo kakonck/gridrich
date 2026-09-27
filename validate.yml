@@ -1,0 +1,20 @@
+name: validate
+on: [push, pull_request]
+jobs:
+  browser-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - uses: r-lib/actions/setup-r@v2
+      - name: Install sf
+        run: sudo apt-get update && sudo apt-get install -y libudunits2-dev libgdal-dev libgeos-dev libproj-dev && Rscript -e 'install.packages("sf", repos = "https://cloud.r-project.org")'
+      - name: Install Playwright
+        run: npm install playwright@1.47 && npx playwright install --with-deps chromium
+      - name: Syntax check
+        run: python3 build.py && node --check test/review_lib.mjs
+      - name: Browser test suites and R/sf comparison
+        run: CHROME=$(node -e "console.log(require('playwright').chromium.executablePath())") bash validation/run_all.sh
+      - uses: actions/upload-artifact@v4
+        with: { name: validation-reports, path: validation/reports/ }
